@@ -1,4 +1,4 @@
-import 'package:dalil_project/core/screens/signup_veiw2.dart';
+import 'package:dalil_project/core/screens/sign_up/sign_up_2/signup_veiw_2.dart';
 import 'package:dalil_project/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 

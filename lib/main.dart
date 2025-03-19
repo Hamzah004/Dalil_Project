@@ -1,5 +1,4 @@
 import 'package:dalil_project/core/screens/courses_passed_view.dart';
-import 'package:dalil_project/core/screens/signup_veiw2.dart';
 import 'package:dalil_project/core/screens/splash/splash_view.dart';
 import 'package:dalil_project/features/study_resource/presentation/bloc/study_resource_bloc.dart';
 import 'package:dalil_project/resources/theme_manager.dart';

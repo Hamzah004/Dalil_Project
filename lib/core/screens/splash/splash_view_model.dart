@@ -1,5 +1,5 @@
 import 'package:dalil_project/core/screens/login/login_view.dart';
-import 'package:dalil_project/core/screens/sign_up/signup_view.dart';
+import 'package:dalil_project/core/screens/sign_up/sign_up_1/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:sizer/sizer.dart';

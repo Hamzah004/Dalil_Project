@@ -28,4 +28,13 @@ class AppStrings {
   static const String major = 'Major*';
   static const String pleaseSelectAMajor = 'Please select a major';
   static const String next = "NEXT";
+  static const String persmissionToAccessGalleryIsDenied =
+      'Permission to access gallery is denied!';
+  static const String passwordCannotBeEmpty = "Password cannot be empty";
+  static const String passwordMustBeAtLeast6Characters =
+      "Password must be at least 6 characters";
+  static const String confirmPasswordCanNotBeEmpty =
+      "Confirm password cannot be empty";
+  static const String passwordDoNotMatch = "Passwords do not match";
+  static const String dalil = 'Dalil';
 }
