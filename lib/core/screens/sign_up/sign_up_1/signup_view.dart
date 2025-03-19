@@ -328,13 +328,7 @@ class _SignupView extends State<SignupView> {
         height: 6.h,
         width: 60.w,
         child: ElevatedButton(
-<<<<<<< HEAD:lib/core/screens/sign_up/signup_view.dart
           onPressed: () => SignUpViewModel.nextButtonOnPressed,
-=======
-          onPressed: () {
-            SignUpViewModel.nextButtonOnPressed(context);
-          },
->>>>>>> 2-refactor_signup_2:lib/core/screens/sign_up/sign_up_1/signup_view.dart
           child: Text(
             AppStrings.next,
             style: GoogleFonts.faustina(
