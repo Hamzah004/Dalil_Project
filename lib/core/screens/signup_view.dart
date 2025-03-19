@@ -1,3 +1,5 @@
+import 'package:dalil_project/core/screens/courses_passed_view.dart';
+import 'package:dalil_project/core/screens/signup_veiw2.dart';
 import 'package:dalil_project/resources/assets_manager.dart';
 import 'package:dalil_project/resources/colors_manager.dart';
 import 'package:dalil_project/resources/fonts_manager.dart';
@@ -485,9 +487,9 @@ class _SignupView extends State<SignupView> {
                     ),
                     onPressed: () {
                       FocusManager.instance.primaryFocus!.unfocus();
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //   builder: (context) => const GenderScreen(),
-                      // ));
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SignupView2(),
+                      ));
                     },
                     child: Text(
                       "NEXT",

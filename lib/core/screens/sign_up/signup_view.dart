@@ -380,7 +380,7 @@ class _SignupView extends State<SignupView> {
         height: 6.h,
         width: 60.w,
         child: ElevatedButton(
-          onPressed: SignUpViewModel.nextButtonOnPressed,
+          onPressed: () => SignUpViewModel.nextButtonOnPressed,
           child: Text(
             AppStrings.next,
             style: GoogleFonts.faustina(

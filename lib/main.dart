@@ -1,3 +1,4 @@
+import 'package:dalil_project/core/screens/courses_passed_view.dart';
 import 'package:dalil_project/core/screens/signup_veiw2.dart';
 import 'package:dalil_project/core/screens/splash/splash_view.dart';
 import 'package:dalil_project/features/study_resource/presentation/bloc/study_resource_bloc.dart';
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: getApplicationTheme(),
-            home: SignupView2(),
+            home: CoursesPassedView(),
           ),
         );
       },
