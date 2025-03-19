@@ -4,7 +4,6 @@ import 'package:dalil_project/resources/assets_manager.dart';
 import 'package:dalil_project/resources/colors_manager.dart';
 import 'package:dalil_project/resources/fonts_manager.dart';
 import 'package:dalil_project/resources/strings_manager.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
