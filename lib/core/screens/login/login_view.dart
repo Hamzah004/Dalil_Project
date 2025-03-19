@@ -1,6 +1,6 @@
 import 'package:dalil_project/core/screens/login/login_view_model.dart';
+import 'package:dalil_project/core/widgets/custom_app_bar.dart';
 import 'package:dalil_project/core/widgets/custom_divider.dart';
-import 'package:dalil_project/resources/assets_manager.dart';
 import 'package:dalil_project/resources/colors_manager.dart';
 import 'package:dalil_project/resources/fonts_manager.dart';
 import 'package:dalil_project/resources/strings_manager.dart';
@@ -25,10 +25,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(23.5.h),
-        child: _buildAppBar(),
-      ),
+      appBar: getCustomAppBar(),
 
       body: SingleChildScrollView(
         child: Center(
@@ -52,55 +49,6 @@ class _LoginViewState extends State<LoginView> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-      backgroundColor: Color(0xFFFDC47E),
-      flexibleSpace: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(ImageAssets.appBarImage, fit: BoxFit.cover),
-          ),
-          Container(
-            alignment: Alignment.topCenter,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 24.w),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Dalil',
-                        style: TextStyle(
-                          fontSize: 40.sp,
-                          fontWeight: FontWeightManager.regular,
-                          color: ColorManager.white,
-                          fontFamily: 'MaShanZheng',
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 7.h),
-                        child: Text(
-                          'دليل',
-                          style: TextStyle(
-                            fontSize: 34.5.sp,
-                            color: ColorManager.white,
-                            fontFamily: FontConstants.arabicFontFamily,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:dalil_project/core/screens/sign_up/sign_up_1/signup_veiw2.dart';
 import 'package:dalil_project/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -72,10 +73,10 @@ class SignUpViewModel {
     return ['Major 1', 'Major 2', 'Major 3'];
   }
 
-  static nextButtonOnPressed() {
+  static nextButtonOnPressed(BuildContext context) {
     FocusManager.instance.primaryFocus!.unfocus();
-    // Navigator.of(context).push(MaterialPageRoute(
-    //   builder: (context) => const GenderScreen(),
-    // ));
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => const SignupView2(),
+    ));
   }
 }
