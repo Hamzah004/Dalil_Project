@@ -1,5 +1,5 @@
 import 'package:dalil_project/core/screens/courses_passed_view.dart';
-import 'package:dalil_project/core/screens/splash/splash_view.dart';
+import 'package:dalil_project/core/screens/home_screen/home_screen_view.dart';
 import 'package:dalil_project/features/study_resource/presentation/bloc/study_resource_bloc.dart';
 import 'package:dalil_project/resources/theme_manager.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: getApplicationTheme(),
-            home: CoursesPassedView(),
+            home: HomePage(),
           ),
         );
       },
