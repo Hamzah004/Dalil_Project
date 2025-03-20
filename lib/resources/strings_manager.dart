@@ -37,4 +37,11 @@ class AppStrings {
       "Confirm password cannot be empty";
   static const String passwordDoNotMatch = "Passwords do not match";
   static const String dalil = 'Dalil';
+  static const String coursesYouHavePassed = "Courses you have passed";
+  static const String chooseYourCurrentClassSchedule =
+      "Choose your current class schedule";
+  static const String aiCanHelpYouCreateACourseScheduleForYourNextSemester =
+      "AI can help you create a course schedule for your next semester!";
+  static const String cancel = "CANCEL";
+  static const String ok = "OK";
 }

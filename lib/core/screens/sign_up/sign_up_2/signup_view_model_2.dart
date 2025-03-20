@@ -1,4 +1,4 @@
-import 'package:dalil_project/core/screens/courses_passed_view.dart';
+import 'package:dalil_project/core/screens/passed_courses/passed_courses_view.dart';
 import 'package:dalil_project/resources/strings_manager.dart';
 import 'package:dalil_project/resources/values_manager.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class SignupViewModel2 {
   static nextButtonOnPressed(BuildContext context){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => CoursesPassedView()),
+      MaterialPageRoute(builder: (context) => PassedCoursesView()),
     );
   }
 }

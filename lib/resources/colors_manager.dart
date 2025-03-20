@@ -7,4 +7,5 @@ class ColorManager {
   static const Color red = Color(0xFFDB0000);
   static const Color appBarBackgroundColor = Color(0xFFFDC47E);
   static const Color profileBackground = Color(0XFFFFF4E6);
+  static const Color transparent = Colors.transparent;
 }

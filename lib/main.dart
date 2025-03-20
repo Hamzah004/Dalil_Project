@@ -1,5 +1,4 @@
-import 'package:dalil_project/core/screens/courses_passed_view.dart';
-import 'package:dalil_project/core/screens/splash/splash_view.dart';
+import 'package:dalil_project/core/screens/passed_courses/passed_courses_view.dart';
 import 'package:dalil_project/features/study_resource/presentation/bloc/study_resource_bloc.dart';
 import 'package:dalil_project/resources/theme_manager.dart';
 import 'package:flutter/material.dart';
@@ -34,35 +33,11 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: getApplicationTheme(),
-            home: CoursesPassedView(),
+            home: PassedCoursesView(),
           ),
         );
       },
 
-    );
-  }
-}
-
-class MyApp2 extends StatelessWidget {
-  const MyApp2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Flutter Demo')),
-      body: Center(
-        child: BlocBuilder<StudyResourceBloc, StudyResourceState>(
-          builder: (context, state) {
-            if (state is LoadedStudyResourceState) {
-              return Text(state.studyResources[0].descreption);
-            }
-            if (state is EmptyStudyResourceState) {
-              return Text('empty');
-            }
-            return CircularProgressIndicator();
-          },
-        ),
-      ),
     );
   }
 }
