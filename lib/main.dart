@@ -1,5 +1,5 @@
-import 'package:dalil_project/core/screens/courses_passed_view.dart';
 import 'package:dalil_project/core/screens/home_screen/home_screen_view.dart';
+import 'package:dalil_project/core/screens/sign_up/sign_up_2/signup_veiw_2.dart';
 import 'package:dalil_project/features/study_resource/presentation/bloc/study_resource_bloc.dart';
 import 'package:dalil_project/resources/theme_manager.dart';
 import 'package:flutter/material.dart';

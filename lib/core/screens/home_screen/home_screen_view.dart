@@ -2,12 +2,13 @@ import 'package:dalil_project/resources/assets_manager.dart';
 import 'package:dalil_project/resources/fonts_manager.dart';
 import 'package:dalil_project/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_elastic_list_view/flutter_elastic_list_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 import '../../../resources/colors_manager.dart';
 import '../../../resources/values_manager.dart';
 
@@ -184,7 +185,6 @@ class _HomePageState extends State<HomePage>
       ),
       child: Row(
         children: [
-          // Left Square with Circle and Icon
           Container(
             width: 12.w,
             height: 12.w,
@@ -208,8 +208,7 @@ class _HomePageState extends State<HomePage>
               ),
             ),
           ),
-          SizedBox(width: 4.w), // Space between icon and text
-          // Course Info
+          SizedBox(width: 4.w),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -375,7 +374,42 @@ List<Map<String, dynamic>> courses = [
     "hours": 2,
     "icon": Icons.menu_book,
   },
-
+  {
+    "name": "English 101",
+    "type": "Optional",
+    "hours": 2,
+    "icon": Icons.menu_book,
+  },
+  {
+    "name": "English 101",
+    "type": "Optional",
+    "hours": 2,
+    "icon": Icons.menu_book,
+  },
+  {
+    "name": "English 101",
+    "type": "Optional",
+    "hours": 2,
+    "icon": Icons.menu_book,
+  },
+  {
+    "name": "English 101",
+    "type": "Optional",
+    "hours": 2,
+    "icon": Icons.menu_book,
+  },
+  {
+    "name": "English 101",
+    "type": "Optional",
+    "hours": 2,
+    "icon": Icons.menu_book,
+  },
+  {
+    "name": "English 101",
+    "type": "Optional",
+    "hours": 2,
+    "icon": Icons.menu_book,
+  },
 ];
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -410,9 +444,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       ],
       tabSize: 12.w,
       tabBarHeight: 6.5.h,
-      textStyle: TextStyle(
-        fontSize: FontSize.s13,
-        color: Colors.black,
+      textStyle: GoogleFonts.faustina(
+        fontSize: FontSize.s14,
+        color: ColorManager.mediumGray,
         fontWeight: FontWeightManager.medium,
       ),
       tabIconColor: ColorManager.primaryColor,
@@ -489,10 +523,10 @@ class AIDialogBox {
       child: Text(
         AppStrings.cancel,
         style: GoogleFonts.faustina(
-        color: ColorManager.primaryColor,
-        fontWeight: FontWeightManager.regular,
-        fontSize: FontSize.s18,
-      ),
+          color: ColorManager.primaryColor,
+          fontWeight: FontWeightManager.regular,
+          fontSize: FontSize.s18,
+        ),
       ),
     );
   }
@@ -522,43 +556,152 @@ class AIDialogBox {
       AppStrings.aiCanHelpYouCreateACourseScheduleForYourNextSemester,
       textAlign: TextAlign.center,
       style: GoogleFonts.faustina(
-      color: ColorManager.primaryColor,
-      fontWeight: FontWeightManager.regular,
-      fontSize: FontSize.s18,
-    ),
+        color: ColorManager.primaryColor,
+        fontWeight: FontWeightManager.regular,
+        fontSize: FontSize.s18,
+      ),
     );
   }
 }
 
 class AiBottomSheet {
   static void getAIButtonSheet(BuildContext context) {
+    double sliderValue = 0;
+    bool showCourses = false;
+
     showModalBottomSheet(
+      backgroundColor: Colors.white,
       isDismissible: false,
       useSafeArea: true,
       context: context,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(5)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
       ),
-      builder:
-          (context) => SizedBox(
-            width: 100.w,
-            height: 40.h,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Hi',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text('Close'),
-                ),
-              ],
-            ),
-          ),
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            int courseCount = (sliderValue / 3).floor(); // Calculate courses based on slider
+            return Container(
+              width: 100.w,
+              height: 40.h,
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  if (showCourses)
+                    Expanded(
+                      child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 4.w,
+                          mainAxisSpacing: 4.w,
+                          childAspectRatio: 3,
+                        ),
+                        itemCount: courseCount,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            color: ColorManager.primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Course ${index + 1}',
+                                style: GoogleFonts.faustina(
+                                  color: ColorManager.white,
+                                  fontWeight: FontWeightManager.bold,
+                                  fontSize: 15.sp,
+                                  letterSpacing: 3.sp,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ).animate().fade(duration: 500.ms).slideY(begin: 0.5, end: 0),
+                    ),
+
+                  // Slider & Button Row
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 2.h),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: SfSlider(
+                            min: 0,
+                            max: 18,
+                            value: sliderValue,
+                            interval: 3,
+                            showLabels: true,
+                            stepSize: 3,
+                            activeColor: ColorManager.primaryColor,
+                            inactiveColor: ColorManager.mediumGray,
+                            thumbIcon: Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: ColorManager.primaryColor,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Text(
+                                sliderValue.toInt().toString(),
+                                style: TextStyle(
+                                  color: ColorManager.white,
+                                  fontWeight: FontWeightManager.bold,
+                                ),
+                              ),
+                            ),
+                            onChanged: (value) {
+                              setState(() {
+                                sliderValue = value;
+                              });
+                            },
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              showCourses = !showCourses;
+                            });
+                          },
+                          child: Container(
+                            width: 12.w,
+                            height: 12.w,
+                            decoration: BoxDecoration(
+                              color: ColorManager.primaryColor,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                ImageAssets.bottomSheetButton, // Your custom image
+                                width: 6.w,
+                                height: 6.w,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ).animate().scale(duration: 200.ms),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }
+
